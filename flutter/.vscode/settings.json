@@ -1,0 +1,6 @@
+{
+    "cmake.configureOnOpen": false,
+    "problems.autoReveal": false,
+    "problems.decorations.enabled": false,
+    "errorLens.followCursor": "activeLine"
+}
