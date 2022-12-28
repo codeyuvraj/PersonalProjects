@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tailor/widgets/cloth_list.dart';
-import '../models/cloth.dart';
+import '../models/item.dart';
 
 class ClothWidget extends StatefulWidget {
   Function? adclt;
@@ -37,23 +37,18 @@ class _ClothWidgetState extends State<ClothWidget> {
               decoration: InputDecoration(
                 label: Text(
                   'Cloth Name',
-                  selectionColor: Color.fromARGB(250, 89, 189, 60),
-                  style: TextStyle(color: Color.fromARGB(230, 77, 5, 5)),
                 ),
               ),
             ),
             DropdownButton<String>(
               elevation: 20,
               borderRadius: BorderRadius.all(Radius.circular(20)),
-              dropdownColor: Color.fromARGB(250, 189, 189, 60),
               items: categories
                   .map(
                     (categ) => DropdownMenuItem<String>(
                         value: categ,
                         child: Text(
                           categ,
-                          style:
-                              TextStyle(color: Color.fromARGB(230, 77, 5, 5)),
                         )),
                   )
                   .toList(),

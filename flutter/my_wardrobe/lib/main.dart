@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './widgets/addCloth.dart';
-import './models/cloth.dart';
+import 'models/item.dart';
 import './widgets/cloth_list.dart';
 
 void main() {
@@ -26,7 +26,6 @@ class _MyAppState extends State<MyApp> {
 
   void _openAddNewcloth(BuildContext ctx) {
     showModalBottomSheet(
-
         context: ctx,
         builder: (_) {
           return ClothWidget(_newCloth);
@@ -36,16 +35,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        // primaryColor: Color.fromRGBO(142, 108, 79, 1),
-        // backgroundColor: Color.fromRGBO(180, 108, 79, 1),
-        
-
-      ),
       home: Scaffold(
-        backgroundColor: Color.fromRGBO(79, 32, 15, 1),
         appBar: AppBar(
-
           actions: [Builder(
             builder: (context) {
               return IconButton(
@@ -53,29 +44,20 @@ class _MyAppState extends State<MyApp> {
                  icon: Icon(Icons.add));
             }
           )],
-          backgroundColor: Color.fromRGBO(199, 108, 63, 1),
           title: const Text(
             'My Wardrobe',
-            style: TextStyle(
-                color: Color.fromRGBO(0, 0, 0, 1),
-                 fontSize: 30),
           ),
         ),
         //Create a Cloth Widget
         body: Column(
           children: [
-            
             ClothList(),
-            // ElevatedButton(onPressed:
-            // () => print(clothes), child: Text('Click Me'))
           ],
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: Builder(builder: (context) => FloatingActionButton(
           onPressed: () => _openAddNewcloth(context),
           child: Icon(Icons.add),
-          // backgroundColor: Color.fromRGBO(149, 69, 32, 1),
-          backgroundColor: Color.fromRGBO(199, 108, 63, 1),
         )),
       ),
     );
