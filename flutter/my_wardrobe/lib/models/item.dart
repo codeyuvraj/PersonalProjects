@@ -1,13 +1,14 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 class Item {
   String? name;
   String? category;
   int? id;
+  // String image;
 
-  Item({this.name, this.category, this.id});
-
-  
+  Item(
+    this.name,
+    this.category,
+    this.id,
+  );
 }
-
-
