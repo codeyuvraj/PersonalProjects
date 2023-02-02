@@ -7,7 +7,7 @@ import 'package:shop/providers/cart.dart';
 import 'package:shop/screens/cart_screen.dart';
 import '../widgets/product_item.dart';
 import '../widgets/products_grid.dart';
-import '../widgets/badge.dart';
+import '../widgets/badge.dart' as bd;
 import '../widgets/app_drawer.dart';
 
 
@@ -58,7 +58,7 @@ class _ProductOverviewState extends State<ProductOverview> {
           ),
           
           Consumer<Cart>(
-            builder: (context, value, child) => Badge(
+            builder: (context, value, child) => bd.Badge(
               child: child, value: value.itemCount.toString()),
             child: FloatingActionButton(
               onPressed: () => Navigator.of(context).pushNamed(CartScreen.routeName),

@@ -51,5 +51,37 @@ class Products with ChangeNotifier {
     });
   }
 
-  final numbers = <int>[1, 2, 3, 4];
+  void addProduct(
+      {String title, String description, double price, String imageUrl}) {
+    _items.add(Product(
+        id: DateTime.now().toString(),
+        title: title,
+        description: description,
+        price: price,
+        imageUrl: imageUrl));
+    notifyListeners();
+  }
+
+  void updateProduct(
+      {String id,
+      String title,
+      String description,
+      double price,
+      String imageUrl}) {
+    int index = _items.indexWhere((element) => element.id == id);
+    print(index);
+    print(id);
+    _items[index] = Product(
+        id: id,
+        title: title,
+        description: description,
+        price: price,
+        imageUrl: imageUrl);
+    notifyListeners();
+  }
+
+  void deleteProduct(String id) {
+    _items.removeWhere((element) => element.id == id);
+    notifyListeners();
+  }
 }
